@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Aside from "../components/Aside";
-import Main from "../components/Main";
+import Nav from "../components/Nav";
+import { earningData } from "../data/dummy";
 
 const Home: NextPage = () => {
   return (
@@ -12,9 +12,34 @@ const Home: NextPage = () => {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-      <main className="">
-        <Aside />
-        <Main />
+      <main className="font-pop w-[calc(100vw-288px)]  ml-72">
+        <Nav />
+        <div className=" px-10 ">
+          <div className="grid grid-cols-4  mt-20 ">
+            {earningData.map((data) => {
+              return (
+                <div className="flex rounded-xl flex-col bg-white gap-4 py-8 px-6  w-60">
+                  <div
+                    className="text-2xl w-fit rounded-full p-4"
+                    style={{
+                      color: data.iconColor,
+                      backgroundColor: data.iconBg,
+                    }}
+                  >
+                    {data.icon}
+                  </div>
+                  <div className="flex items-center gap-4 ">
+                    <p className="text-lg">{data.amount}</p>
+                    <p className={`text-sm text-red-500 ${data.pcColor}`}>
+                      {data.percentage}
+                    </p>
+                  </div>
+                  <p className="text-gray-400">{data.title}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </main>
     </div>
   );

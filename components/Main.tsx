@@ -1,5 +1,11 @@
+import Nav from "./Nav";
+
 const Main = () => {
-  return <div className="w-full bg-gray-50 min-h-screen">Main</div>;
+  return (
+    <div className=" min-h-screen">
+      <Nav />
+    </div>
+  );
 };
 
 export default Main;

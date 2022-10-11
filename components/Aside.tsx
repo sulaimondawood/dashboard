@@ -4,7 +4,7 @@ const Aside = () => {
   console.log(links);
 
   return (
-    <aside className="fixed w-72 overflow-auto bg-white shadow-2xl p-6  h-screen shadow-black-50">
+    <aside className="fixed w-72 overflow-auto scrollbar-hide bg-white shadow-2xl p-6  h-screen shadow-black-50">
       <h1 className="text-2xl mb-10 font-bold">
         Dash <span className="text-blue-700">Board</span>
       </h1>
@@ -18,10 +18,10 @@ const Aside = () => {
               <div className="flex flex-col text-gray-700 gap-6 ">
                 {link.links.map((link) => {
                   return (
-                    <div className="flex gap-2 text-lg">
+                    <div className="flex items-center p-2 hover:bg-gray-100 hover:rounded  gap-4 text-md">
                       <div>{link.icon}</div>
 
-                      <p>{link.name}</p>
+                      <p className="capitalize">{link.name}</p>
                     </div>
                   );
                 })}
