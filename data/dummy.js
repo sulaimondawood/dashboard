@@ -694,7 +694,7 @@ export const recentTransactions = [
     desc: "Money Added",
     iconColor: "#03C9D7",
     iconBg: "#E5FAFB",
-    pcColor: "green-600",
+    pcColor: "green",
   },
   {
     icon: <BsShield />,
@@ -703,7 +703,7 @@ export const recentTransactions = [
     title: "Wallet",
     iconColor: "rgb(0, 194, 146)",
     iconBg: "rgb(235, 250, 242)",
-    pcColor: "red-600",
+    pcColor: "red",
   },
   {
     icon: <FiCreditCard />,
@@ -713,7 +713,7 @@ export const recentTransactions = [
     iconColor: "rgb(255, 244, 229)",
     iconBg: "rgb(254, 201, 15)",
 
-    pcColor: "green-600",
+    pcColor: "green",
   },
   {
     icon: <TiTick />,
@@ -723,7 +723,7 @@ export const recentTransactions = [
 
     iconColor: "rgb(228, 106, 118)",
     iconBg: "rgb(255, 244, 229)",
-    pcColor: "green-600",
+    pcColor: "green",
   },
   {
     icon: <BsCurrencyDollar />,
@@ -733,7 +733,7 @@ export const recentTransactions = [
     desc: "Payment Sent",
     iconColor: "#03C9D7",
     iconBg: "#E5FAFB",
-    pcColor: "red-600",
+    pcColor: "red",
   },
 ];
 
@@ -3034,24 +3034,13 @@ export const ecomPieChartData = [
 ];
 
 export const stackedChartData = [
-  [
-    { x: "Jan", y: 111.1 },
-    { x: "Feb", y: 127.3 },
-    { x: "Mar", y: 143.4 },
-    { x: "Apr", y: 159.9 },
-    { x: "May", y: 159.9 },
-    { x: "Jun", y: 159.9 },
-    { x: "July", y: 159.9 },
-  ],
-  [
-    { x: "Jan", y: 111.1 },
-    { x: "Feb", y: 127.3 },
-    { x: "Mar", y: 143.4 },
-    { x: "Apr", y: 159.9 },
-    { x: "May", y: 159.9 },
-    { x: "Jun", y: 159.9 },
-    { x: "July", y: 159.9 },
-  ],
+  { name: "Jan", Budget: 91.1, Expense: 111.1 },
+  { name: "Feb", Budget: 117.3, Expense: 127.3 },
+  { name: "Mar", Budget: 133.4, Expense: 150.6 },
+  { name: "Apr", Budget: 89.9, Expense: 102.4 },
+  { name: "May", Budget: 99.9, Expense: 122.4 },
+  { name: "Jun", Budget: 149.9, Expense: 160 },
+  { name: "July", Budget: 159.9, Expense: 180.6 },
 ];
 
 export const stackedCustomSeries = [

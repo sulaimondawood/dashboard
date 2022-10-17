@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         pop: ["Poppins", "sans-serif"],
       },
+      gridTemplateColumns: {
+        fixed: "1fr 2fr",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],

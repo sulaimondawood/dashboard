@@ -1,8 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { BarChart } from "recharts";
+import LineChart from "../components/LineChart";
 import Nav from "../components/Nav";
+import StackedBar from "../components/StackedBar";
 import { earningData } from "../data/dummy";
-
+import BarChat from "../components/BarChart";
+import PieChart from "../components/PieChart";
+import RecentTrans from "../components/RecentTrans";
 const Home: NextPage = () => {
   return (
     <div>
@@ -12,10 +17,10 @@ const Home: NextPage = () => {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-      <main className="font-pop w-[calc(100vw-288px)]  ml-72">
+      <main className="font-pop w-[calc(100vw-288px)]   ml-72">
         <Nav />
         <div className=" px-10 ">
-          <div className="grid grid-cols-4  mt-20 ">
+          <div className="grid grid-cols-4 px-20  mt-20 ">
             {earningData.map((data) => {
               return (
                 <div className="flex rounded-xl flex-col bg-white gap-4 py-8 px-6  w-60">
@@ -38,6 +43,62 @@ const Home: NextPage = () => {
                 </div>
               );
             })}
+          </div>
+
+          {/* Charts */}
+        </div>
+        <div className="w-fit p-5 mx-auto  rounded-md mt-10 bg-white">
+          <div className="flex items-center gap-2">
+            <div className="flex flex-col">
+              <p className="text-xl mb-10 capitalize font-medium">
+                Revenue Updates
+              </p>
+              <div className="flex flex-col pl-10 gap-8">
+                <div className="flex flex-col gap-1">
+                  <h1 className="font-medium text-3xl">
+                    $93,438
+                    <span className="text-green-100 bg-green-400 rounded-full p-2 text-sm">
+                      20%
+                    </span>
+                  </h1>
+                  <p className="text-gray-400 text-sm">Budget</p>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <h1 className="font-medium text-3xl">$48,487</h1>
+                  <p className="text-gray-400 text-sm">Expense</p>
+                </div>
+                <LineChart />
+                <p className="bg-blue-500 self-start rounded-md px-4 py-2 text-blue-100">
+                  Download Report
+                </p>
+              </div>
+            </div>
+
+            {/* Dvider */}
+            <div className="bg-gray-200 w-[1px] h-80"></div>
+
+            {/* left chart */}
+            <div className="self-end">
+              <StackedBar />
+            </div>
+          </div>
+        </div>
+
+        {/* Piechart */}
+
+        <div className="flex w-[calc(100vw-530px)] p-6 bg-blue-500 gap-4 mx-auto my-20 justify-between rounded-lg  items-center">
+          <BarChat />
+
+          <PieChart />
+        </div>
+
+        {/* Overview Section */}
+        <div className="grid grid-cols-fixed gap-10 px-14 ">
+          <div className="">
+            <RecentTrans />
+          </div>
+          <div className="">
+            <RecentTrans />
           </div>
         </div>
       </main>
