@@ -514,6 +514,7 @@ export const links = [
     title: "Dashboard",
     links: [
       {
+        path: "/",
         name: "ecommerce",
         icon: <FiShoppingBag />,
       },
@@ -524,14 +525,20 @@ export const links = [
     title: "Pages",
     links: [
       {
+        path: "/orders",
+
         name: "orders",
         icon: <AiOutlineShoppingCart />,
       },
       {
+        path: "/employees",
+
         name: "employees",
         icon: <IoMdContacts />,
       },
       {
+        path: "/customers",
+
         name: "customers",
         icon: <RiContactsLine />,
       },
@@ -541,56 +548,79 @@ export const links = [
     title: "Apps",
     links: [
       {
+        path: "/calender",
+
         name: "calendar",
         icon: <AiOutlineCalendar />,
       },
+      // {
+      //   path: "/kanban",
+
+      //   name: "kanban",
+      //   icon: <BsKanban />,
+      // },
       {
-        name: "kanban",
-        icon: <BsKanban />,
-      },
-      {
+        path: "/editor",
+
         name: "editor",
         icon: <FiEdit />,
       },
-      {
-        name: "color-picker",
-        icon: <BiColorFill />,
-      },
+      // {
+      //   path: "/color-picker",
+
+      //   name: "color-picker",
+      //   icon: <BiColorFill />,
+      // },
     ],
   },
   {
     title: "Charts",
     links: [
       {
+        path: "/line",
+
         name: "line",
         icon: <AiOutlineStock />,
       },
       {
+        path: "/area",
+
         name: "area",
         icon: <AiOutlineAreaChart />,
       },
 
       {
+        path: "/bar",
+
         name: "bar",
         icon: <AiOutlineBarChart />,
       },
       {
+        path: "/pie",
+
         name: "pie",
         icon: <FiPieChart />,
       },
       {
+        path: "/financial",
+
         name: "financial",
         icon: <RiStockLine />,
       },
+      // {
+      //   path: "/color-mapping",
+
+      //   name: "color-mapping",
+      //   icon: <BsBarChart />,
+      // },
+      // {
+      //   path: "/pyramid",
+
+      //   name: "pyramid",
+      //   icon: <GiLouvrePyramid />,
+      // },
       {
-        name: "color-mapping",
-        icon: <BsBarChart />,
-      },
-      {
-        name: "pyramid",
-        icon: <GiLouvrePyramid />,
-      },
-      {
+        path: "/stacked",
         name: "stacked",
         icon: <AiOutlineBarChart />,
       },
@@ -2915,34 +2945,64 @@ export const scheduleData = [
 
 export const lineChartData = [
   [
-    { x: new Date(2005, 0, 1), y: 21 },
-    { x: new Date(2006, 0, 1), y: 24 },
-    { x: new Date(2007, 0, 1), y: 36 },
-    { x: new Date(2008, 0, 1), y: 38 },
-    { x: new Date(2009, 0, 1), y: 54 },
-    { x: new Date(2010, 0, 1), y: 57 },
-    { x: new Date(2011, 0, 1), y: 70 },
+    { x: 2005, y: 21 },
+    { x: 2006, y: 24 },
+    { x: 2007, y: 36 },
+    { x: 2008, y: 38 },
+    { x: 2009, y: 54 },
+    { x: 2010, y: 57 },
+    { x: 2011, y: 70 },
   ],
   [
-    { x: new Date(2005, 0, 1), y: 28 },
-    { x: new Date(2006, 0, 1), y: 44 },
-    { x: new Date(2007, 0, 1), y: 48 },
-    { x: new Date(2008, 0, 1), y: 50 },
-    { x: new Date(2009, 0, 1), y: 66 },
-    { x: new Date(2010, 0, 1), y: 78 },
-    { x: new Date(2011, 0, 1), y: 84 },
+    { x: 2005, y: 28 },
+    { x: 2006, y: 44 },
+    { x: 2007, y: 48 },
+    { x: 2008, y: 50 },
+    { x: 2009, y: 66 },
+    { x: 2010, y: 78 },
+    { x: 2011, y: 84 },
   ],
 
   [
-    { x: new Date(2005, 0, 1), y: 10 },
-    { x: new Date(2006, 0, 1), y: 20 },
-    { x: new Date(2007, 0, 1), y: 30 },
-    { x: new Date(2008, 0, 1), y: 39 },
-    { x: new Date(2009, 0, 1), y: 50 },
-    { x: new Date(2010, 0, 1), y: 70 },
-    { x: new Date(2011, 0, 1), y: 100 },
+    { x: 2005, y: 10 },
+    { x: 2006, y: 20 },
+    { x: 2007, y: 30 },
+    { x: 2008, y: 39 },
+    { x: 2009, y: 50 },
+    { x: 2010, y: 70 },
+    { x: 2011, y: 100 },
   ],
 ];
+// export const lineChartData = [
+//   [
+//     { x: 2005, y: 21 },
+//     { x: 2006, y: 24 },
+//     { x: 2007, y: 36 },
+//     { x:2008, y: 38 },
+//     { x: 2009, y: 54 },
+//     { x: 2010, y: 57 },
+//     { x: 2011, y: 70 },
+//   ],
+//   [
+//     { x: new Date(2005, 0, 1), y: 28 },
+//     { x: new Date(2006, 0, 1), y: 44 },
+//     { x: new Date(2007, 0, 1), y: 48 },
+//     { x: new Date(2008, 0, 1), y: 50 },
+//     { x: new Date(2009, 0, 1), y: 66 },
+//     { x: new Date(2010, 0, 1), y: 78 },
+//     { x: new Date(2011, 0, 1), y: 84 },
+//   ],
+
+//   [
+//     { x: new Date(2005, 0, 1), y: 10 },
+//     { x: new Date(2006, 0, 1), y: 20 },
+//     { x: new Date(2007, 0, 1), y: 30 },
+//     { x: new Date(2008, 0, 1), y: 39 },
+//     { x: new Date(2009, 0, 1), y: 50 },
+//     { x: new Date(2010, 0, 1), y: 70 },
+//     { x: new Date(2011, 0, 1), y: 100 },
+//   ],
+// ];
 export const dropdownData = [
   {
     Id: "1",

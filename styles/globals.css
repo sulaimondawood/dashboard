@@ -4,13 +4,23 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  background: rgb(245, 245, 245);
+@layer base {
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    background: rgb(245, 245, 245);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
 }
 
-* {
-  box-sizing: border-box;
+.vertical {
+  vertical-align: center;
 }

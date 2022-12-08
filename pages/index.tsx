@@ -8,7 +8,15 @@ import { earningData } from "../data/dummy";
 import BarChat from "../components/BarChart";
 import PieChart from "../components/PieChart";
 import RecentTrans from "../components/RecentTrans";
+import Overview from "../components/Overview";
+import Weekly from "../components/Weekly";
+import Medical from "../components/Medical";
+import Daily from "../components/Daily";
+import { useRouter } from "next/router";
 const Home: NextPage = () => {
+  const router = useRouter();
+  // console.log(router);
+
   return (
     <div>
       <Head>
@@ -17,15 +25,18 @@ const Home: NextPage = () => {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-      <main className="font-pop w-[calc(100vw-288px)]   ml-72">
+      <main className="font-pop w-screen lg:w-[calc(100vw-288px)]   lg:ml-64">
         <Nav />
-        <div className=" px-10 ">
-          <div className="grid grid-cols-4 px-20  mt-20 ">
-            {earningData.map((data) => {
+        <div className=" px-4 lg:px-10 ">
+          <div className="grid gap-4 grid-cols lg:grid-cols-4 lg:px-20  mt-20 ">
+            {earningData.map((data, index) => {
               return (
-                <div className="flex rounded-xl flex-col bg-white gap-4 py-8 px-6  w-60">
+                <div
+                  key={index}
+                  className="flex rounded-xl flex-col bg-white gap-4 py-8 px-6   lg:w-60"
+                >
                   <div
-                    className="text-2xl w-fit rounded-full p-4"
+                    className="text-3xl lg:text-2xl w-fit rounded-full p-5 lg:p-4"
                     style={{
                       color: data.iconColor,
                       backgroundColor: data.iconBg,
@@ -34,12 +45,14 @@ const Home: NextPage = () => {
                     {data.icon}
                   </div>
                   <div className="flex items-center gap-4 ">
-                    <p className="text-lg">{data.amount}</p>
-                    <p className={`text-sm text-red-500 ${data.pcColor}`}>
+                    <p className="text-2xl lg:text-lg">{data.amount}</p>
+                    <p
+                      className={`text-md lg:text-sm text-red-500 ${data.pcColor}`}
+                    >
                       {data.percentage}
                     </p>
                   </div>
-                  <p className="text-gray-400">{data.title}</p>
+                  <p className="text-gray-400 text-3xl">{data.title}</p>
                 </div>
               );
             })}
@@ -47,13 +60,13 @@ const Home: NextPage = () => {
 
           {/* Charts */}
         </div>
-        <div className="w-fit p-5 mx-auto  rounded-md mt-10 bg-white">
-          <div className="flex items-center gap-2">
+        <div className="w-fit mx-4 p-5 lg:mx-auto  rounded-md my-10 bg-white">
+          <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-2">
             <div className="flex flex-col">
               <p className="text-xl mb-10 capitalize font-medium">
                 Revenue Updates
               </p>
-              <div className="flex flex-col pl-10 gap-8">
+              <div className="flex flex-col lg:pl-10 gap-8">
                 <div className="flex flex-col gap-1">
                   <h1 className="font-medium text-3xl">
                     $93,438
@@ -74,32 +87,24 @@ const Home: NextPage = () => {
               </div>
             </div>
 
-            {/* Dvider */}
-            <div className="bg-gray-200 w-[1px] h-80"></div>
-
-            {/* left chart */}
-            <div className="self-end">
+            <div className="hidden lg:block lg:bg-gray-200 lg:w-[1px] lg:h-80"></div>
+            <div>
               <StackedBar />
             </div>
           </div>
         </div>
 
-        {/* Piechart */}
-
-        <div className="flex w-[calc(100vw-530px)] p-6 bg-blue-500 gap-4 mx-auto my-20 justify-between rounded-lg  items-center">
-          <BarChat />
-
-          <PieChart />
+        {/* Overview Section */}
+        <div className="grid lg:grid-cols-fixed gap-10 px-4 lg:px-14 ">
+          <RecentTrans />
+          <Overview />
         </div>
 
-        {/* Overview Section */}
-        <div className="grid grid-cols-fixed gap-10 px-14 ">
-          <div className="">
-            <RecentTrans />
-          </div>
-          <div className="">
-            <RecentTrans />
-          </div>
+        {/* Details footer? */}
+        <div className="grid lg:grid-cols-3 px-4 lg:px-14 gap-4 my-10">
+          <Weekly />
+          <Medical />
+          <Daily />
         </div>
       </main>
     </div>

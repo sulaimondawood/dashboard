@@ -1,10 +1,11 @@
 import { dropdownData } from "../data/dummy";
 import { recentTransactions } from "../data/dummy";
+
 const RecentTrans = () => {
   return (
-    <div className="bg-white  p-6">
+    <div className="bg-white rounded-lg p-6">
       <div className="flex items-center mb-10 justify-between">
-        <p className="text-xl font-semibold">Recent Transactions</p>
+        <p className="text-lg font-medium">Recent Transactions</p>
         <select className="border-2 p-4 rounded-lg outline-none" name="" id="">
           {dropdownData.map((option) => {
             const { Time, Id }: { Time: string; Id: string } = option;
@@ -17,7 +18,7 @@ const RecentTrans = () => {
         </select>
       </div>
       <div className="flex flex-col gap-6">
-        {recentTransactions.map((recent) => {
+        {recentTransactions.map((recent, index) => {
           const {
             icon,
             amount,
@@ -29,7 +30,7 @@ const RecentTrans = () => {
             pcColor,
           } = recent;
           return (
-            <div className="flex justify-between ">
+            <div key={index} className="flex justify-between ">
               <div className="flex gap-4">
                 <p
                   style={{ color: iconColor, backgroundColor: iconBg }}

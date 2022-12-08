@@ -1,15 +1,5 @@
-// import { LineChart, Line, ResponsiveContainer } from "recharts";
-import React, { PureComponent } from "react";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+// import React, { PureComponent } from "react";
+import { LineChart, Line, XAxis, YAxis, Tooltip } from "recharts";
 const data = [
   {
     name: "Page A",
@@ -57,19 +47,17 @@ const data = [
 
 const LineChat = () => {
   return (
-    <ResponsiveContainer height={150} width={400}>
-      <LineChart
-        width={100}
-        height={100}
-        data={data}
-        margin={{ top: 20, right: 100, left: 10, bottom: 0 }}
-      >
-        <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
-        <XAxis hide={true} />
-        <YAxis hide={true} />
-        <Tooltip />
-      </LineChart>
-    </ResponsiveContainer>
+    <LineChart
+      width={300}
+      height={100}
+      data={data}
+      margin={{ top: 20, right: 100, left: 10, bottom: 0 }}
+    >
+      <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
+      <XAxis hide={true} />
+      <YAxis hide={true} />
+      <Tooltip />
+    </LineChart>
   );
 };
 
