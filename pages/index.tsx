@@ -26,7 +26,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="font-pop w-screen lg:w-[calc(100vw-288px)]   lg:ml-64">
-        <Nav />
+        {/* <Nav /> */}
         <div className=" px-4 lg:px-10 ">
           <div className="grid gap-4 grid-cols lg:grid-cols-4 lg:px-20  mt-20 ">
             {earningData.map((data, index) => {

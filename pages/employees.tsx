@@ -5,7 +5,7 @@ const Employees: NextPage = () => {
   return (
     <div>
       <div className="lg:w-[calc(100vw-288px)] mx-2   lg:ml-64  rounded-lg">
-        <Nav />
+        {/* <Nav /> */}
         <div className="bg-white lg:w-[80%] mt-20 px-10 rounded-lg container">
           <h1 className="text-3xl font-semibold py-10"> Employees Data</h1>
           <table className="w-full">

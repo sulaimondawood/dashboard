@@ -7,32 +7,36 @@ import avatar from "../data/avatar.jpg";
 import Profile from "./Profile";
 import Notification from "./Notification";
 import Message from "./Messages";
-import { useState } from "react";
-const Nav = () => {
+import { useState, useContext } from "react";
+import { Provider } from "../pages/_app";
+const Nav = ({ toggle, setToggle }: { toggle: boolean; setToggle: any }) => {
   const [isMessage, setIsMessageActive] = useState(false);
   const [isProfile, setIsProfileActive] = useState(false)!;
   const [isNotification, setIsNotificationActive] = useState(false);
 
   return (
     <div>
-      <nav className="flex w-screen lg:w-full justify-between items-center py-4 px-4 lg:py-6 lg:px-10   ">
+      <nav className="flex  justify-between lg:justify-end w-screen lg:w-full  items-center py-4 px-4 lg:py-6 lg:px-10   ">
         <div className=" lg:hidden">
-          <FaBars className="text-blue-500 text-3xl " />
+          <FaBars
+            onClick={() => setToggle(!toggle)}
+            className="text-blue-500 text-xl "
+          />
         </div>
 
         <div className="flex gap-4 items-center">
-          <BsMinecart className="text-pink-500 text-2xl lg:text-xl" />
+          <BsMinecart className="text-blue-500  text-xl" />
           <div className="relative">
             <FiMessageSquare
               onClick={() => setIsMessageActive(!isMessage) as any}
-              className="text-pink-500 text-2xl lg:text-xl"
+              className="text-blue-500 text-xl"
             />
             {isMessage && <Message />}
           </div>
           <div className="relative">
             <IoMdNotificationsOutline
               onClick={() => setIsNotificationActive(!isNotification) as any}
-              className="text-pink-500 text-2xl lg:text-xl"
+              className="text-blue-500 text-xl"
             />
             {isNotification && <Notification />}
           </div>

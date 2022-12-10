@@ -1,10 +1,13 @@
 import { StaticImageData } from "next/image";
 import Nav from "../components/Nav";
 import { ordersData } from "../data/dummy";
+import { useContext } from "react";
 const Order = () => {
+  // const data = useContext(Provider);
+
   return (
     <div className="lg:w-[calc(100vw-288px)] mx-4   lg:ml-72  rounded-lg">
-      <Nav />
+      {/* <Nav /> */}
 
       <div className="bg-white  lg:w-[90%] mt-20 px-10 rounded-lg container">
         <h1 className="text-3xl font-semibold py-10"> Latest Orders</h1>

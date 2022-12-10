@@ -7,10 +7,10 @@ const Notification = () => {
   return (
     <div className="bg-white rounded-lg w-[350px] z-50 p-8 absolute right-0 top-12 shadow-md">
       <div className="flex justify-between items-center ">
-        <p className="text-xl font-semibold">Notification </p>
+        <p className="text-sm lg:text-xl font-semibold">Notification </p>
         <AiOutlineCloseCircle className="text-gray-400 text-2xl" />
       </div>
-      <div className="flex flex-col gap-4 mt-10">
+      <div className="flex flex-col gap-4 -mr-10 lg:-mr-0 mt-10">
         <div className="flex gap-3 ">
           <img className="w-10 h-10 rounded-full " src={Avatar.src} alt="" />
           <div>

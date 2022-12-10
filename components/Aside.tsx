@@ -1,18 +1,20 @@
 import { links } from "../data/dummy";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { FiStar, FiEdit } from "react-icons/fi";
+import { FiStar, FiEdit, FiCrosshair } from "react-icons/fi";
 
-import { AiOutlineSetting } from "react-icons/ai";
+import { AiOutlineBars, AiOutlineSetting } from "react-icons/ai";
 
-const Aside = () => {
-  // console.log(links);
+const Aside = ({ toggle, setToggle }: { toggle: boolean; setToggle: any }) => {
   const router = useRouter();
 
   return (
-    <aside className="fixed md:w-[70%] hidden lg:block   lg:w-72 overflow-y-auto scrollbar-hide bg-white shadow-2xl p-6  shadow-black-50 h-full">
+    <aside
+      style={{ display: toggle ? "block" : "hidden" }}
+      className="fixed md:w-[90%] hidden lg:block   lg:w-72 overflow-y-auto scrollbar-hide bg-white shadow-2xl p-6  shadow-black-50 h-full"
+    >
       <h1 className="text-2xl mb-10 font-bold">
-        Dash <span className="text-blue-700">Board</span>
+        <span className="text-blue-400">Dawood</span>
       </h1>
       <AiOutlineSetting className="text-white text-5xl bg-blue-400 p-1  z-50 fixed bottom-6 right-4 rounded-full" />
 

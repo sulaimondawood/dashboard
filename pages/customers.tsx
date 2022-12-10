@@ -4,10 +4,10 @@ import { customersData } from "../data/dummy";
 const Customers = () => {
   return (
     <div>
-      <div className="w-[calc(100vw-288px)]   lg:ml-64  rounded-lg">
-        <Nav />
+      <div className="w-[calc(100vw-288px)] mx-4 lg:mx-0  lg:ml-64  rounded-lg">
+        {/* <Nav /> */}
 
-        <div className="bg-white w-fit  mx-4 mt-20 px-10 rounded-lg container">
+        <div className="bg-white w-fit lg:w-[80%]  mt-20 px-10 rounded-lg container">
           <h1 className="text-2xl lg:text-3xl font-semibold py-10">
             Customers Data
           </h1>
